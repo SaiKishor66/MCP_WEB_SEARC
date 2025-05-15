@@ -5,16 +5,17 @@ import asyncio
 import os
 import streamlit as st
 
+# Page config MUST be the first Streamlit command
+st.set_page_config(page_title="Smart Web Agent", layout="wide")
+
+# Now you can use other Streamlit commands
+st.write("OpenAI API Key loaded:", bool(os.getenv("OPENAI_API_KEY")))
+
 from mcp_agent.app import MCPApp
 from mcp_agent.agents.agent import Agent
 from mcp_agent.workflows.llm.augmented_llm_openai import OpenAIAugmentedLLM
 from mcp_agent.workflows.llm.augmented_llm import RequestParams
 
-# Check if API key is loaded
-st.write("OpenAI API Key loaded:", bool(os.getenv("OPENAI_API_KEY")))
-
-# Page config
-st.set_page_config(page_title="Smart Web Agent", layout="wide")
 
 # Custom CSS styling
 st.markdown("""
