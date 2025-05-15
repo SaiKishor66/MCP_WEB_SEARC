@@ -24,25 +24,31 @@ A powerful Streamlit-based web agent powered by MCP Agent + Puppeteer + OpenAI, 
 
 ## 🛠️ Tech Stack
 
-- [Streamlit](https://streamlit.io/) – Frontend interface  
-- [Puppeteer](https://pptr.dev/) – Browser automation  
-- [MCP Agent](https://github.com/microsoft/mcp) – Agent orchestration  
-- [OpenAI API](https://platform.openai.com/) – LLM integration  
+- [Streamlit](https://streamlit.io/) – Frontend interface
+- [Puppeteer](https://pptr.dev/) – Browser automation
+- [MCP Agent](https://github.com/microsoft/mcp) – Agent orchestration
+- [OpenAI API](https://platform.openai.com/) – LLM integration
 
 ---
 
 ## 📁 Project Structure
 
-📦MCP_Web_Search  
-┣ 📜 smart_web_agent.py # Main Streamlit app  
-┣ 📜 README.md # Project documentation  
-┗ 📜 requirements.txt # Python dependencies  
+
+📦MCP_Web_Search
+┣ 📜 smart_web_agent.py # Main Streamlit app
+┣ 📜 README.md # Project documentation
+┗ 📜 requirements.txt # Python dependencies
+
+
+
+---
+
 
 ---
 
 ## 🚀 Getting Started
 
-### 📦 Usage Guide
+## 📦 Usage Guide
 
 ```bash
 # 1. Clone the repository
@@ -61,3 +67,48 @@ set OPENAI_API_KEY=your_openai_api_key
 
 # 4. Run the app
 streamlit run smart_web_agent.py
+
+---
+
+```
+
+##🧪 Example Commands
+
+
+```bash
+
+
+🧭 Navigation
+Go to wikipedia.org/wiki/computer_vision
+
+🖱️ Interaction
+Click on the link to object detection and take a screenshot
+Scroll down the page and summarize the content
+
+🧩 Multi-step Task
+Navigate to the Wikipedia page on AI, scroll, and summarize key points
+
+```
+📦 Requirements
+Include the following in requirements.txt:
+
+```bash
+
+streamlit
+openai
+mcp-agent
+asyncio
+python-dotenv
+
+```
+🙋 Support
+
+```bash
+
+
+For any queries or suggestions, feel free to raise an issue or connect with me on LinkedIn.
+
+
+
+
+
