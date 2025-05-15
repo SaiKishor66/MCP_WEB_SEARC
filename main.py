@@ -1,21 +1,14 @@
-import nest_asyncio
-nest_asyncio.apply()
-
 import asyncio
 import os
 import streamlit as st
-
-# Page config MUST be the first Streamlit command
-st.set_page_config(page_title="Smart Web Agent", layout="wide")
-
-# Now you can use other Streamlit commands
-st.write("OpenAI API Key loaded:", bool(os.getenv("OPENAI_API_KEY")))
 
 from mcp_agent.app import MCPApp
 from mcp_agent.agents.agent import Agent
 from mcp_agent.workflows.llm.augmented_llm_openai import OpenAIAugmentedLLM
 from mcp_agent.workflows.llm.augmented_llm import RequestParams
 
+# Page config
+st.set_page_config(page_title="Smart Web Agent", layout="wide")
 
 # Custom CSS styling
 st.markdown("""
@@ -80,10 +73,11 @@ if 'initialized' not in st.session_state:
     st.session_state.loop = asyncio.new_event_loop()
     asyncio.set_event_loop(st.session_state.loop)
 
+
+# Agent setup
 async def setup_agent():
     if not st.session_state.initialized:
         try:
-            st.write("Initializing MCP Agent...")
             st.session_state.mcp_context = st.session_state.mcp_app.run()
             st.session_state.mcp_agent_app = await st.session_state.mcp_context.__aenter__()
 
@@ -105,13 +99,14 @@ async def setup_agent():
             logger = st.session_state.mcp_agent_app.logger
             tools = await st.session_state.browser_agent.list_tools()
             logger.info("Tools available:", data=tools)
-            st.write("Agent initialized successfully.")
+
             st.session_state.initialized = True
         except Exception as e:
-            st.error(f"Error during initialization: {e}")
-            return f"Error during initialization: {e}"
+            return f"Error during initialization: {str(e)}"
     return None
 
+
+# Agent runner
 async def run_mcp_agent(message):
     if not os.getenv("OPENAI_API_KEY"):
         return "❌ Error: OPENAI_API_KEY not set"
@@ -130,20 +125,16 @@ async def run_mcp_agent(message):
     except Exception as e:
         return f"❌ Error: {str(e)}"
 
+
 # Button and response
 col1, col2 = st.columns([4, 1])
 with col2:
     if st.button("🚀 Run", use_container_width=True):
         with st.spinner("Running your web agent..."):
-            try:
-                response_result = st.session_state.loop.run_until_complete(run_mcp_agent(query))
-                if response_result:
-                    st.markdown("## 📬 Response")
-                    st.markdown(response_result)
-                else:
-                    st.warning("No response received.")
-            except Exception as e:
-                st.error(f"Error running agent: {e}")
+            response_result = st.session_state.loop.run_until_complete(run_mcp_agent(query))
+
+        st.markdown("## 📬 Response")
+        st.markdown(response_result)
 
 # Footer / Credit
 st.markdown("""
