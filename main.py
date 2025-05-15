@@ -1,3 +1,6 @@
+   import nest_asyncio
+nest_asyncio.apply()
+
 import asyncio
 import os
 import streamlit as st
@@ -70,8 +73,7 @@ if 'initialized' not in st.session_state:
     st.session_state.mcp_agent_app = None
     st.session_state.browser_agent = None
     st.session_state.llm = None
-    st.session_state.loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(st.session_state.loop)
+    # Removed manual event loop creation
 
 
 # Agent setup
@@ -131,7 +133,8 @@ col1, col2 = st.columns([4, 1])
 with col2:
     if st.button("🚀 Run", use_container_width=True):
         with st.spinner("Running your web agent..."):
-            response_result = st.session_state.loop.run_until_complete(run_mcp_agent(query))
+            # Use asyncio.run instead of loop.run_until_complete
+            response_result = asyncio.run(run_mcp_agent(query))
 
         st.markdown("## 📬 Response")
         st.markdown(response_result)
