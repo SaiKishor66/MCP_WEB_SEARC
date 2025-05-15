@@ -1,0 +1,4 @@
+# Ignore secret configuration files
+secrets.toml
+.streamlit/secrets.toml.toml
+logs/.streamlit/secrets.toml.toml
