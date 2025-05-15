@@ -1,4 +1,4 @@
-# MCP_WEB_SEARC
+# MCP_WEB_SEARCH
 
 # 🚀 MCP_Web_Search – Smart Web Agent by Sai Kishor
 
