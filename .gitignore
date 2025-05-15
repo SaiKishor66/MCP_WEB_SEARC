@@ -1,3 +1,8 @@
+# Ignore secret files containing API keys
+secrets.toml
+logs/.streamlit/secrets.toml.toml
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
