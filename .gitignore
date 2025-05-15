@@ -1,12 +1,12 @@
-# Ignore secret files containing API keys
+# Ignore secret configuration files
 secrets.toml
+.streamlit/secrets.toml.toml
 logs/.streamlit/secrets.toml.toml
+"API.txt"
 
 # Ignore environment files
 .env
 config.py
-
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
