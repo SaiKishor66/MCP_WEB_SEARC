@@ -2,6 +2,11 @@
 secrets.toml
 logs/.streamlit/secrets.toml.toml
 
+# Ignore environment files
+.env
+config.py
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
