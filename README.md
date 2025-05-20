@@ -8,7 +8,7 @@ A powerful Streamlit-based web agent powered by MCP Agent + Puppeteer + OpenAI, 
 
 > Add a demo GIF or screenshot here (replace the URL)
 
-![Demo](![Screenshot 2025-05-20 164332](https://github.com/user-attachments/assets/23f7c96e-e02d-4b16-9ea7-b24c8b9903a5)
+!([Screenshot 2025-05-20 164332](https://github.com/user-attachments/assets/23f7c96e-e02d-4b16-9ea7-b24c8b9903a5)
 )
 
 ---
