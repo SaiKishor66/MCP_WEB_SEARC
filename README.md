@@ -5,8 +5,6 @@ A powerful Streamlit-based web agent powered by MCP Agent + Puppeteer + OpenAI, 
 ---
 ## 📸 Demo
 
-> Add a demo GIF or screenshot here (replace the URL if needed)
-
 ![Screenshot 2025-05-20 16:43:32](https://github.com/user-attachments/assets/23f7c96e-e02d-4b16-9ea7-b24c8b9903a5)
 
 ---
