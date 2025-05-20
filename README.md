@@ -3,13 +3,11 @@
 A powerful Streamlit-based web agent powered by MCP Agent + Puppeteer + OpenAI, capable of browsing websites, performing actions like clicking and scrolling, extracting and summarizing content, and capturing screenshots — all through natural language commands.
 
 ---
-
 ## 📸 Demo
 
-> Add a demo GIF or screenshot here (replace the URL)
+> Add a demo GIF or screenshot here (replace the URL if needed)
 
-!([Screenshot 2025-05-20 164332](https://github.com/user-attachments/assets/23f7c96e-e02d-4b16-9ea7-b24c8b9903a5)
-)
+![Screenshot 2025-05-20 16:43:32](https://github.com/user-attachments/assets/23f7c96e-e02d-4b16-9ea7-b24c8b9903a5)
 
 ---
 
